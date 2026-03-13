@@ -1,4 +1,4 @@
-# ColtraneDB-3 ---
+# ColtraneDB-3
 
 ## Tercera Instancia del proyecto de Base de Datos y Backend para el E-Commerce "El Rincón De Coltrane" (https://github.com/TomasPerezMera/ElReactDeColtrane).-
 
