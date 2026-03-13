@@ -1,0 +1,258 @@
+/* CSS de Componentes Específicos */
+
+.product-catalog {
+    & p {
+        text-align: center;
+    }
+}
+
+.product-card {
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    gap: 1rem;
+    margin: 5px auto;
+    padding: 20px;
+    border: 3px solid transparent;
+    & a {
+        background:
+        linear-gradient(#000,#000) padding-box,
+        linear-gradient(to right,var(--violet),var(--darkBlue)) border-box;
+    }
+}
+
+.product-title {
+    margin: 1.5rem auto 1rem;
+    letter-spacing: 2px;
+    text-align: center;
+    font-size: clamp(1.5rem, 2vw, 2rem);
+    text-shadow: 2px 2px 5px rgba(0,0,0,.3),0px 0px 10px rgba(66,135,245,.6);
+    letter-spacing: .15em;
+    font-weight: 500;
+    line-height: 1.2;
+    overflow-wrap: break-word;
+    word-break: break-word;
+}
+
+.product-detail-title {
+    font-size: clamp(2rem, 2vw, 2.5rem);
+    margin: 0 auto 0.5rem;
+}
+
+.pagination {
+    margin: 20px 0;
+    text-align: center;
+}
+
+.product-detail-container {
+    margin: 10px auto 30px;
+    border-radius: 5px;
+    background-color: transparent;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5),
+    0px 0px 20px rgba(61, 5, 152, 0.6);
+}
+
+.product-detail {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-top: 20px;
+    & p {
+    white-space: pre-line;
+    font-size: clamp(1rem, 1.2vw, 1.2rem);
+    }
+    & .detail-actions {
+        display:flex;
+        flex-wrap:wrap;
+        gap:12px;
+        margin: 0.5rem auto;
+        padding: 0.5rem 1rem;
+        & .quantity-selector {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 2rem;
+            width:100%;
+            & > *{
+                flex:1;
+            }
+            & .qty-btn {
+                border: 1px solid #5b6cff;
+                background: transparent;
+                font-size: 1.5rem;
+                cursor: pointer;
+                text-align: center;
+            }
+            & .qty-value {
+                display:flex;
+                align-items:center;
+                justify-content:center;
+                font-size:1.2rem;
+            }
+        }
+        & > .nav-btn,
+        & > .add-to-cart{
+            flex:1;
+        }
+    }
+    & .detail-actions {
+        display: flex;
+        justify-content: space-between;
+        gap: 1rem;
+    }
+}
+
+.product-detail-image{
+    position:static;
+    max-width: 70%;
+    margin: 2rem auto 0;
+}
+
+.product-info {
+    background: rgba(25,10,60,0.7);
+    padding: 0.5rem;
+    border-radius: 10px;
+}
+
+.product-info .product-detail-headers {
+    p {
+        margin: 10px 0;
+        font-size: clamp(1.2rem, 1.5vw, 1.5rem);
+    }
+}
+
+.product-price {
+    color:var(--color-accent);
+    font-weight: bold;
+}
+
+/* Navbar Cart Icon */
+
+.nav-cart-btn {
+    position: relative;
+    font-size: 1.2rem;
+    padding: 5px 10px;
+    margin: 5px;
+    margin-left: auto;
+}
+
+.cart-count {
+    position: absolute;
+    top: -6px;
+    right: -10px;
+    background: var(--color-accent);
+    color: white;
+    font-size: .75rem;
+    padding: 2px 6px;
+    border-radius: 20px;
+    min-width: 18px;
+    text-align: center;
+}
+
+.cart-bump {
+    animation: cartBump .3s ease;
+}
+
+@keyframes cartBump {
+    0% { transform: scale(1); }
+    40% { transform: scale(1.25); }
+    100% { transform: scale(1); }
+}
+
+
+.cart-total {
+    display:flex;
+    flex-flow: column wrap;
+    margin: 1rem auto;
+    padding: 2rem;
+    text-align: center;
+    & h2 {
+        font-size: clamp(1rem, 2vw, 1.25rem);
+        flex: 1;
+        margin: 1rem auto;
+    }
+    & .btn {
+        margin: 1rem auto;
+        width: 60%;
+        background: var(--color-accent);
+    }
+}
+
+/* ============================================
+    Componentes de Auth Pages
+   ============================================ */
+
+.auth-container {
+    min-height: 70vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem 1rem;
+}
+
+.auth-card {
+    width: 100%;
+    max-width: 500px;
+    padding: 2rem;
+    margin: 0 auto;
+}
+
+.auth-title {
+    text-align: center;
+    font-size: clamp(2rem, 3vw, 2.5rem);
+    margin-bottom: 1rem;
+}
+
+.auth-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+/* Form Groups */
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    & label {
+        font-size: clamp(1rem, 1.2vw, 1.125rem);
+        color: white;
+    }
+}
+
+.form-input {
+    padding: 0.75rem 1rem;
+    font-size: 1rem;
+    font-family: "Clarendon Regular", serif;
+    background: rgba(255, 255, 255, 0.05);
+    border: 2px solid var(--darkBlue);
+    border-radius: 8px;
+    color: white;
+    transition: border-color 0.3s ease, background 0.3s ease;
+    &:focus {
+        outline: none;
+        border-color: var(--violet);
+        background: rgba(255, 255, 255, 0.1);
+    }
+    &::placeholder {
+        color: rgba(255, 255, 255, 0.4);
+    }
+}
+
+.form-actions {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    & > * {
+        flex: 1;
+        min-width: 150px;
+    }
+}
+
+.auth-alternative {
+    text-align: center;
+    & p {
+        margin-bottom: 1rem;
+        color: rgba(255, 255, 255, 0.7);
+    }
+}
+

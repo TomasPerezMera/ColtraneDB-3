@@ -1,0 +1,41 @@
+<div class="profile-container">
+    <h1 class="header-title">Mi Perfil</h1>
+    <hr>
+    <div class="profile-grid">
+        <section class="profile-info gradient-border">
+            <h2 class="profile-section-title">Información Personal</h2>
+            <div class="info-block">
+                <p><strong>Nombre:</strong> {{user.first_name}} {{user.last_name}}</p>
+                <p><strong>Email:</strong> {{user.email}}</p>
+                <p><strong>Edad:</strong> {{user.age}} años</p>
+                <p><strong>Rol:</strong> {{user.role}}</p>
+                {{#if isAdmin}}
+                    <p class="header-title">Cuenta Admin Coderhouse!!</p>
+                {{/if}}
+            </div>
+        </section>
+        <section class="profile-orders gradient-border">
+            <h2 class="profile-section-title">Historial de Compras</h2>
+            <div class="info-block">
+                <p>Próximamente: tus órdenes y tickets de compra!</p>
+            </div>
+        </section>
+        <section class="profile-actions gradient-border">
+            <h2 class="profile-section-title">Acciones</h2>
+            <div class="profile-actions-grid">
+                <a href="/products" class="btn">
+                    Ver productos
+                </a>
+                <form method="POST" action="/api/sessions/logout">
+                    <button type="submit" class="btn btn--danger">
+                        Cerrar sesión
+                    </button>
+                </form>
+            </div>
+        </section>
+    </div>
+    <hr>
+    <div class="btn--return">
+        <a href="/" class="btn">Volver al inicio</a>
+    </div>
+</div>

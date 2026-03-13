@@ -1,0 +1,38 @@
+<section class="product-catalog">
+    <h1 class="header-title">El Rincón de Coltrane</h1>
+    <hr>
+    {{#if user}}
+        <p>Hola, {{user.first_name}}!</p>
+    {{/if}}
+    <div class="product-catalog-container container">
+        <div class="product-grid">
+            {{#each products}}
+                <article  class="product-card gradient-border">
+                    <div class="cover-wrapper hover-vinyl">
+                        <a href="/products/{{id}}">
+                            <img src="/static/covers/{{coverImageSource}}" alt="{{name}}">
+                        </a>
+                    </div>
+                    <div class="product-detail-titles">
+                        <h2 class="product-title">{{name}}</h2>
+                        <p>Artista: {{artist}}</p>
+                        <p>Precio: ${{currentPrice}}</p>
+                    </div>
+                    <a class="btn gradient-border" href="/products/{{id}}">Ver detalle</a>
+                </article>
+            {{/each}}
+        </div>
+        <hr>
+        <div class="pagination">
+            {{#if pagination.hasPrevPage}}
+                <a class="btn" href="/products?page={{pagination.prevPage}}">← Anterior</a>
+            {{/if}}
+                &nbsp;
+                <span>Página {{pagination.page}} de {{pagination.totalPages}}</span>
+                &nbsp;
+            {{#if pagination.hasNextPage}}
+                <a class="btn" href="/products?page={{pagination.nextPage}}">Siguiente →</a>
+            {{/if}}
+        </div>
+    </div>
+</section>

@@ -1,0 +1,35 @@
+<section class="product-detail-container container">
+    <div class="detail-grid">
+        <div class="cover-wrapper hover-vinyl product-detail-image">
+            <img src="/static/covers/{{product.coverImageSource}}" alt="{{product.name}}">
+        </div>
+        <article class="product-detail">
+            <h1 class="product-title product-detail-title">{{product.name}}</h1>
+            <div class="product-info">
+                <div class="product-detail-headers">
+                    <p><strong>Artista:</strong> {{product.artist}}</p>
+                    <p><strong>Precio:</strong><span class="product-price"> ${{product.currentPrice}}</span></p>
+                    <p><strong>Categoría:</strong> {{product.category}}</p>
+                    <p><strong>Stock:</strong> {{product.stock}} unidades</p>
+                </div>
+                <div class="product-info">
+                    &nbsp;
+                    <p>{{product.description}}</p>
+                    &nbsp;
+                </div>
+            </div>
+            <hr>
+            <div class="detail-actions">
+                <div class="quantity-selector">
+                    <button class="btn qty-btn-detail qty-btn-minus" data-action="decrease">-</button>
+                    <span class="qty-value">1</span>
+                    <button class="btn qty-btn-detail qty-btn-plus" data-action="increase">+</button>
+                </div>
+                <a class="btn" href="/products">Volver al catálogo</a>
+                <button class="add-to-cart btn gradient-border" data-product-id="{{product.id}}">
+                    Agregar al carrito
+                </button>
+            </div>
+        </article>
+    </div>
+</section>

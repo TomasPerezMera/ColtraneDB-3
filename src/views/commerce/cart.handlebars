@@ -1,0 +1,52 @@
+<div class="cart-container container">
+    <h1 class="product-title">Tu Carrito</h1>
+    <hr>
+    {{#if cart.products.length}}
+        <div class="cart-items-container gradient-border container">
+            {{#each cart.products}}
+                <div class="cart-item">
+                    <div class="cover-wrapper hover-vinyl">
+                        <a href="/products/{{this.product.id}}">
+                            <img src="/static/covers/{{this.product.coverImageSource}}" alt="{{this.product.name}}">
+                        </a>
+                    </div>
+                    <div class="product-detail-titles">
+                        <h3>{{this.product.name}}</h3>
+                        <p>Artista: {{this.product.artist}}</p>
+                        <p>Precio Unitario: ${{this.product.currentPrice}}</p>
+                        <p class="item-quantity" data-product-id="{{this.product._id}}">
+                            Cantidad: <span>{{this.quantity}}</span>
+                        </p>
+                        <p class="item-total-price" data-product-id="{{this.product._id}}" data-unit-price="{{this.product.currentPrice}}">
+                            Precio Total: $<span></span>
+                        </p>
+                    </div>
+                    <div class="quantity-controls">
+                        <button class="qty-btn btn cart-btn-minus" data-product-id="{{product._id}}">-</button>
+                        <span class="cart-qty-display">{{quantity}}</span>
+                        <button class="qty-btn btn cart-btn-plus" data-product-id="{{product._id}}">+</button>
+                        <button class="remove-from-cart btn btn--danger" data-product-id="{{this.product._id}}">
+                            Eliminar
+                        </button>
+                    </div>
+                </div>
+            {{/each}}
+        </div>
+        <div class="cart-total product-info">
+            <h2>Total de ítems: <span class="display-total-items">{{totalItems}}</span></h2>
+            <h2>Total a pagar: $<span class="display-total-price">{{cart.totalPrice}}</span></h2>
+            <button class="btn clear-cart gradient-border">
+                Vaciar Carrito
+            </button>
+            <button class="btn make-purchase gradient-border">
+                Realizar Compra
+            </button>
+        </div>
+    {{else}}
+        <p class="product-info product-title cart-empty">Tu carrito está vacío.</p>
+    {{/if}}
+    <hr>
+    <div class="btn--return">
+        <a href="/products" class="btn">Volver al catálogo</a>
+    </div>
+</div>

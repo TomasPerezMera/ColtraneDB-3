@@ -1,0 +1,80 @@
+<div class="auth-container">
+    <div class="auth-card gradient-border">
+        <h1 class="auth-title">Crear Cuenta</h1>
+        <hr>
+        <form class="auth-form" method="POST" action="/api/sessions/register">
+            <div class="form-group">
+                <label for="first_name">Nombre</label>
+                <input
+                    type="text"
+                    id="first_name"
+                    name="first_name"
+                    class="form-input"
+                    required
+                >
+            </div>
+            <div class="form-group">
+                <label for="last_name">Apellido</label>
+                <input
+                    type="text"
+                    id="last_name"
+                    name="last_name"
+                    class="form-input"
+                    required
+                >
+            </div>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    class="form-input"
+                    required
+                >
+            </div>
+            <div class="form-group">
+                <label for="age">Edad</label>
+                <input
+                    type="number"
+                    id="age"
+                    name="age"
+                    class="form-input"
+                    min="18"
+                    required
+                >
+            </div>
+            <div class="form-group">
+                <label for="password">Contraseña</label>
+                <input
+                    type="password"
+                    id="password"
+                    name="password"
+                    class="form-input"
+                    minlength="6"
+                    required
+                >
+            </div>
+            <div class="form-group">
+                <label for="confirm_password">Confirmar Contraseña</label>
+                <input
+                    type="password"
+                    id="confirm_password"
+                    name="confirm_password"
+                    class="form-input"
+                    minlength="6"
+                    required
+                >
+            </div>
+            <hr>
+            <div class="form-actions">
+                <button type="submit" class="btn btn--primary">
+                    Registrarse
+                </button>
+                <a href="/login" class="btn">
+                    Ya tengo cuenta!
+                </a>
+            </div>
+        </form>
+    </div>
+</div>

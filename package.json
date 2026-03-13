@@ -1,0 +1,37 @@
+{
+  "name": "coltranedb-2",
+  "version": "2.0.0",
+  "type": "module",
+  "dependencies": {
+    "@types/express": "^5.0.6",
+    "bcrypt": "^6.0.0",
+    "connect-mongo": "^6.0.0",
+    "cookie-parser": "^1.4.7",
+    "dotenv": "^17.3.1",
+    "express": "^5.2.1",
+    "express-handlebars": "^8.0.6",
+    "express-session": "^1.19.0",
+    "jsonwebtoken": "^9.0.3",
+    "mongodb": "^7.1.0",
+    "mongoose": "^9.2.3",
+    "mongoose-paginate-v2": "^1.9.1",
+    "nodemailer": "^8.0.2",
+    "passport": "^0.7.0",
+    "passport-github2": "^0.1.12",
+    "passport-jwt": "^4.0.1",
+    "passport-local": "^1.0.0",
+    "socket.io": "^4.8.3",
+    "sweetalert2": "^11.26.20"
+  },
+  "devDependencies": {
+    "@types/passport": "^1.0.17",
+    "@types/passport-github2": "^1.2.9",
+    "@types/passport-jwt": "^4.0.1",
+    "@types/passport-local": "^1.0.38",
+    "nodemon": "^3.1.14"
+  },
+  "scripts": {
+    "start": "node src/app.js",
+    "dev": "nodemon src/app.js"
+  }
+}

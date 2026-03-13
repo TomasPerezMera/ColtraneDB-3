@@ -1,0 +1,112 @@
+/* TODO REVAMP: General Utility Classes */
+
+.cover-wrapper {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    overflow: hidden;
+    & img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.3s ease;
+    }
+    & a {
+        display:block;
+        width:100%;
+        height:100%;
+    }
+}
+
+/* Layout Utilities (container, grid, flex)*/
+
+.container{
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: clamp(1rem, 2vw, 2rem);
+}
+
+
+
+/* Button Utilities */
+
+.btn {
+    font-family: "Clarendon Regular", serif;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    padding: 0.5rem;
+    margin: 5px;
+    border-radius: 5px;
+    border: 1px solid var(--darkBlue);
+    background-color: transparent;
+    font-size: clamp(0.8rem, 1.5vw, 1rem);
+    cursor: pointer;
+    transition: transform .25s ease, box-shadow .25s ease;
+    min-height: 44px;
+    appearance: none;
+    background: none;
+    &:is(a) {
+        text-decoration: none;
+    }
+    &:hover {
+        transform: scale(1.05);
+        box-shadow:
+            0 0 10px rgba(0,0,0,.5),
+            0 0 20px rgba(66,135,245,.6);
+    }
+    &:disabled {
+        opacity: 0.5;
+        cursor: not-allowed;
+        pointer-events: none;
+    }
+}
+
+.btn--nav {
+    border: 1px solid transparent;
+}
+
+.btn--danger {
+    border-color: #d32f2f;
+    color: #fe4e4e;
+    &:hover {
+        background: rgba(211, 47, 47, 0.1);
+        box-shadow: 0 0 10px rgba(211, 47, 47, 0.5);
+    }
+}
+
+.btn--return {
+    display: flex;
+    margin: auto;
+    justify-content: center;
+}
+
+.gradient-border {
+    border-radius: 12px;
+    border: 2px solid transparent;
+    background:
+        linear-gradient(#000,#000) padding-box,
+        linear-gradient(to left,var(--violet),var(--darkBlue)) border-box;
+    box-shadow: 0 0 15px rgba(120,90,255,0.2);
+}
+
+.hover-vinyl {
+    &:hover {
+        box-shadow: 0 10px 25px rgba(90,80,255,0.25);
+        & img {
+        transform: scale(1.05);
+        }
+    }
+}
+
+
+/*
+    TODO!!
+    2. Spacing Utilities (margin, padding, gap)
+    3. Typography Utilities (sizes, weights, alignment)
+    4. Button Utilities (base + modifiers)
+    5. Form Utilities (inputs, groups, states)
+    6. Visual Effects (gradients, borders, hover)
+    7. State Utilities (loading, error, success)
+*/
